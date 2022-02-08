@@ -1,0 +1,32 @@
+    parentNode = document.getElementById('sorting')
+    const rectListNode = document.getElementsByClassName('rectangle')
+    var rectList = Array.prototype.slice.call(rectListNode);
+    rectList.forEach(function(item) {
+        arrayList.push(Number(item.id))
+    })
+    console.log(arrayList)
+
+
+    inputArr = arrayList
+    let n = inputArr.length;
+    for (let i = 0; i < n; i++) {
+        // Choosing the first element in our unsorted subarray
+        let current = inputArr[i];
+        selectorElement = document.getElementById(current)
+        selectorElement.style.backgroundColor = "red"
+        await new Promise((resolve) => setTimeout(() => {resolve();}, speedMS));
+    
+        let j = i-1; 
+        element = document.getElementById(current)
+        element.style.backgroundColor = "blue"
+        element.parentNode.insertBefore(element, selectorElement);
+
+        while ((j > -1) && (current < inputArr[j])) {
+            inputArr[j+1] = inputArr[j];
+            inputArr[j+1]
+            j--;
+        }
+        inputArr[j+1] = current;
+    }
+
+    console.log(inputArr)

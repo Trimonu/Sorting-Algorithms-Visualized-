@@ -6,16 +6,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito:wght@300&display=swap" rel="stylesheet">
+
     <title>Sorting Algorithms Visualized</title>
 </head>
 
 
 
 
-<body>
+<body onload="onLoad()">
     <div class=center>
-        <h1>Sorting Algorithms Visualized</h1>
-            
-    </div class=center>
+        <h1 id="demo"></h1>
+    </div>
+
+    <div id="sorting" class="sorting">
+        <div style="padding-top: 30px;" id="orig" class="rectangle"></div>
+    </div>
+
+    <div class="selectors">
+        <input type="range" step="0.1" min="1" max="10" value="5.5" class="slider" id="speedRange">
+        <speed id="speedVal">1</speed>
+        <div class="button">
+            <button id="Insertion" onclick="logicalExecution(this)">Insertion</button>
+            <button id="BubbleSort" onclick="logicalExecution(this)">Bubble Sort</button>
+        </div>
+    </div>
+
+
+
 </body>
 </html>
