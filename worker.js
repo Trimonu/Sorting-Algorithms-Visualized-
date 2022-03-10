@@ -1,9 +1,12 @@
 var i = 0;
 var txt = 'Sorting Algorithms Visualized'; /* The text */
-var speed = 35; /* The speed/duration of the effect in milliseconds */
+var speed = 35; /* The speed of intro */
 var temp = ""
+var sliderValue = ""
+var cancelled = false
 
 function onLoad() {
+
     generateBlocks(25)
     typeWriter()
 }
@@ -101,7 +104,15 @@ async function Insertion() {
     bars[0].style.backgroundColor = 'rgb(0, 225, 0)'
 
     for (var i = 1; i < bars.length; i++) {
-        
+        // Stop Script 
+        if (cancelled) {
+            console.log('stopping script')
+            cancelled = false
+            document.getElementById("Insertion").disabled = false
+            return
+          } 
+
+
         // 1 Before Current
         var j = i - 1
 
@@ -139,7 +150,6 @@ async function Insertion() {
                 resolve();
             }, document.getElementById("speedRange").value * 100 / 2))
 
-            console.log(document.getElementById("speedRange").value * 100 / 2)
             // Color sorted section green
             for(var k=i;k>=0;k--){
                 bars[k].style.backgroundColor = "#0ED100";
@@ -159,7 +169,7 @@ async function Insertion() {
     bars[i].style.backgroundColor = "#f00000";
 
     // Enable Button
-    document.getElementById("Insertion").disabled = false
+    document.getElementById("Insertion").disabled = true
     }
 }
 
@@ -169,4 +179,16 @@ async function Insertion() {
 
 function BubbleSort() {
     console.log('BubbleSort cmd')
+}
+
+
+function sliderText(value) {
+    console.log(value)
+    sliderValue.innerHTML = value * 100 / 2
+}
+
+
+function stopFunctions() {
+    cancelled = true
+    console.log(cancelled)
 }

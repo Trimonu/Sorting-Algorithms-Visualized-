@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito:wght@300&display=swap" rel="stylesheet">
 
-    <title>Sorting Algorithms Visualized</title>
+    <title></title>
 </head>
 
 
@@ -24,11 +24,13 @@
     </div>
 
     <div class="selectors">
+        <speed id="speedVal">Speed</speed>
+        <div></div>
         <input type="range" step="0.1" min="1" max="10" value="5.5" class="slider" id="speedRange">
-        <speed id="speedVal">1</speed>
         <div class="button">
             <button id="Insertion" onclick="logicalExecution(this)">Insertion</button>
             <button id="BubbleSort" onclick="logicalExecution(this)">Bubble Sort</button>
+            <button id="Insertion" onclick="stopFunctions()">Stop</button>
         </div>
     </div>
 

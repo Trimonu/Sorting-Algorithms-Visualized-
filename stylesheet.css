@@ -75,3 +75,14 @@ h1 {
     transition: padding-top 0.5s;
     border-radius: 3px 3px;
 }
+
+
+
+#speedVal {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+#speedRange {
+    direction: rtl
+  }
